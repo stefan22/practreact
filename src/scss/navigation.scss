@@ -1,1 +1,25 @@
 
+.topnav {
+  .navbar-brand {
+    margin-right:2rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    margin: 3px 12px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+
+ }

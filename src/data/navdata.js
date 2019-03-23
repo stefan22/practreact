@@ -1,7 +1,7 @@
 export const navigation =
   {
     label0: {
-      name:'SLInc.®', linkUrl: '/about'
+      name:'SL Inc.®', linkUrl: '/about'
     },
 
     label1: {
