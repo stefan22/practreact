@@ -1,14 +1,16 @@
+//import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React from 'react';
 import '../scss/navigation.scss';
 import {navigation} from '../data/navdata';
+import {NavLink} from 'react-router-dom';
 
 
-const Navigation = () => {
+const Navigation = (props) => {
   const {label0,label1,label2,label3,label4,label5,label6,label7} = navigation;
 
   return (
 
-    <nav className='topnav navbar navbar-expand-lg navbar-dark bg-dark'>
+    <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
       <a className='navbar-brand'
          href={label0.linkUrl}>{label0.name}
       </a>
@@ -21,43 +23,40 @@ const Navigation = () => {
       <div className='collapse navbar-collapse' id='navbarSupportedContent'>
         <ul className='navbar-nav mr-auto'>
 
-          <li className='nav-item active'>
-            <a className='nav-link'
-               href={label1.linkUrl}>{label1.name}
-               <span className='sr-only'>(current)</span></a>
+          <li className='nav-item'>
+            <NavLink to={label1.linkUrl} className='nav-link'
+               activeClassName='is-active' exact={true}
+               >
+               {label1.name}
+               <span className='sr-only'>(current)</span>
+            </NavLink>
           </li>
 
           <li className='nav-item'>
-            <a className='nav-link'
-               href={label2.linkUrl}>{label2.name}
-            </a>
+            <NavLink to={label2.linkUrl} className='nav-link'
+               activeClassName='is-active'
+               >
+               {label2.name}
+            </NavLink>
           </li>
 
           <li className='nav-item'>
-            <a className='nav-link'
-               href={label3.linkUrl}>{label3.name}
-            </a>
+            <NavLink to={label3.linkUrl} className='nav-link'
+               activeClassName='is-active'
+               >
+               {label3.name}
+            </NavLink>
           </li>
 
-          <li className='nav-item dropdown'>
-            <a className='nav-link dropdown-toggle'
-               href={label4.linkUrl} id='navbarDropdown'
-               role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-              {label4.name}
-            </a>
-            <div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-              <a className='dropdown-item'
-                 href={label5.linkUrl}>{label5.name}
-              </a>
-              <a className='dropdown-item'
-                 href={label6.linkUrl}>{label6.name}
-              </a>
-              <div className='dropdown-divider'></div>
-              <a className='dropdown-item'
-                 href={label7.linkUrl}>{label7.name}
-              </a>
-            </div>
+          <li className='nav-item'>
+            <NavLink to={label4.linkUrl} className='nav-link'
+               activeClassName='is-active'
+               >
+               {label4.name}
+            </NavLink>
           </li>
+
+
 
         </ul>
       </div>

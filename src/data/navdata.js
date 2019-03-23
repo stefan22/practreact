@@ -1,34 +1,22 @@
 export const navigation =
   {
-    label0: {
-      name:'SL Inc.®', linkUrl: '/about'
+    label0: {//company
+      name:'SL Inc.®', linkUrl: '/about-us'
     },
 
-    label1: {
+    label1: {//home
       name: 'Home', linkUrl: '/'
     },
 
-    label2: {
-      name:'Page one', linkUrl: '/pageone'
+    label2: {//pageOne
+      name:'Page one', linkUrl: '/page-one'
     },
 
-    label3: {
-      name: 'Page two', linkUrl: '/pagetwo'
+    label3: {//pageTwo
+      name: 'Page two', linkUrl: '/page-two'
     },
 
-    label4: {
-      name: 'Dropdown', linkUrl: '/#'
-    },
-
-    label5: {
-      name: 'Action1', linkUrl: '/#Action1'
-    },
-
-    label6: {
-      name: 'Action2', linkUrl: '/#Action2'
-    },
-
-    label7: {
-      name: 'Action3', linkUrl: '/#Action3'
-    },
+    label4: {//pageThree
+      name: 'PageThree', linkUrl: '/page-three'
+    }
   };
