@@ -1,0 +1,11 @@
+.table-wrapper {
+  overflow:auto;
+  width: 100%;
+  table {
+    font-size: 90%;
+    th {
+      background: lightgray;
+      font-weight: normal;
+    }
+  }
+}
