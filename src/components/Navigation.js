@@ -1,4 +1,3 @@
-//import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React from 'react';
 import '../scss/navigation.scss';
 import {navigation} from '../data/navdata';
@@ -6,7 +5,7 @@ import {NavLink} from 'react-router-dom';
 
 
 const Navigation = (props) => {
-  const {label0,label1,label2,label3,label4,label5,label6,label7} = navigation;
+  const {label0,label1,label2,label3,label4} = navigation;
 
   return (
 
@@ -55,8 +54,6 @@ const Navigation = (props) => {
                {label4.name}
             </NavLink>
           </li>
-
-
 
         </ul>
       </div>

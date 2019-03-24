@@ -16,20 +16,18 @@ class App extends Component {
           <div className='main-navigation'>
             <Navigation removeActiveShow={this.removeActiveShow} />
           </div>
-          <div className='container-fluid'>
-            <div className='row'>
-              <div className='main-wrapper col-12'>
-                <Switch>
-                  <Route path="/" exact={true} component={Dashboard} />
-                  <Route path="/about-us" component={Company} />
-                  <Route path="/page-one" component={PageOne} />
-                  <Route path="/page-two" component={PageTwo} />
-                  <Route path="/page-three" component={PageThree} />
-                </Switch>
-              </div>
-            </div>
+
+          <div className='main-wrapper'>
+            <Switch>
+              <Route path="/" exact={true} component={Dashboard} />
+              <Route path="/about-us" component={Company} />
+              <Route path="/page-one" component={PageOne} />
+              <Route path="/page-two" component={PageTwo} />
+              <Route path="/page-three" component={PageThree} />
+            </Switch>
           </div>
         </div>
+
     );
   }
 }
