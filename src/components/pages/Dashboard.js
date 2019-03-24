@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import List from '../List';
 import ListDetails from '../ListDetails';
+import FormList from '../FormList';
 import '../../scss/dashboard.scss';
+import '../../scss/form.scss';
+import TextInputField from '../form/TextInputField';
+import CheckboxInputField from '../form/CheckboxInputField';
 
 const Api = 'https://jsonplaceholder.typicode.com/users';
 
@@ -49,9 +53,37 @@ class Dashboard extends Component {
               </div>
 
               <List users={users} itemElement={ListDetails} />
-
+              <div className='heading'>
+                <h1 className='text-center'>Form</h1>
+                <p>the form content: passing to the input field component</p>
               </div>
+
+              <form>
+                <TextInputField
+                  label='Title'
+                  name= 'title'
+                  itemElement={FormList}
+                />
+                <TextInputField
+                    label='Company'
+                    name='company'
+                    itemElement={FormList}
+                />
+                <TextInputField
+                    label='Salary'
+                    name='salary'
+                    itemElement={FormList}
+                />
+
+                <CheckboxInputField
+                  label='Accept terms'
+                  name='terms'
+                  itemElement={FormList}
+                />
+              </form>
+
             </div>
+          </div>
         </div>
     );
   }
