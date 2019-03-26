@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import List from '../List';
 import ListDetails from '../ListDetails';
-import FormList from '../FormList';
+//import FormList from '../FormList';
 import '../../scss/dashboard.scss';
 import '../../scss/form.scss';
 import TextInputField from '../form/TextInputField';
 import CheckboxInputField from '../form/CheckboxInputField';
+import SelectOption from '../form/SelectOption';
 
 const Api = 'https://jsonplaceholder.typicode.com/users';
 
@@ -17,6 +18,7 @@ class Dashboard extends Component {
       users: [],
     }
     this.getMeUsers = this.getMeUsers.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -40,8 +42,21 @@ class Dashboard extends Component {
       })
   }
 
+  handleChange(e) {
+    const {type,name,value} = e.target;
+    if(type === 'checkbox') {
+      console.log(name, ' => ', value);
+    } else {
+      console.log(name, ' => ', value);
+    }
+
+  }
+
   render() {
+    console.log(this);
     const {users} = this.state;
+    const options = ['Full-time','Part-time','Remote'];
+
 
     return (
         <div className='container'>
@@ -62,23 +77,30 @@ class Dashboard extends Component {
                 <TextInputField
                   label='Title'
                   name= 'title'
-                  itemElement={FormList}
+                  //itemElement={FormList}
+                  handleChange={this.handleChange}
                 />
                 <TextInputField
                     label='Company'
                     name='company'
-                    itemElement={FormList}
+                    //itemElement={FormList}
                 />
                 <TextInputField
                     label='Salary'
                     name='salary'
-                    itemElement={FormList}
+                    //itemElement={FormList}
                 />
 
                 <CheckboxInputField
                   label='Accept terms'
                   name='terms'
-                  itemElement={FormList}
+                  //itemElement={FormList}
+                />
+
+                <SelectOption
+                  label={'Role preferences'}
+                  name={'select-box-input'}
+                  options={options}
                 />
               </form>
 

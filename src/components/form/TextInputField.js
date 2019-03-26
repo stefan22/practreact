@@ -3,7 +3,7 @@ import '../../scss/form.scss';
 
 class TextInputField extends Component {
   constructor(props) {
-    super(props);
+   super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleInputFocus = this.handleInputFocus.bind(this);
     this.handleInputBlur = this.handleInputBlur.bind(this);
