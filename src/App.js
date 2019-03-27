@@ -4,7 +4,7 @@ import Navigation from './components/Navigation';
 import {Route, Switch} from 'react-router-dom';
 import PageOne from './components/pages/PageOne';
 import PageTwo from './components/pages/PageTwo';
-import PageThree from './components/pages/PageThree';
+import ContactForm from './components/pages/ContactForm';
 import Dashboard from './components/pages/Dashboard';
 import Company from './components/pages/Company';
 
@@ -23,7 +23,7 @@ class App extends Component {
               <Route path="/about-us" component={Company} />
               <Route path="/page-one" component={PageOne} />
               <Route path="/page-two" component={PageTwo} />
-              <Route path="/page-three" component={PageThree} />
+              <Route path="/contact-us" component={ContactForm} />
             </Switch>
           </div>
         </div>

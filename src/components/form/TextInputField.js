@@ -3,49 +3,49 @@ import '../../scss/form.scss';
 
 class TextInputField extends Component {
   constructor(props) {
-   super(props);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleInputFocus = this.handleInputFocus.bind(this);
-    this.handleInputBlur = this.handleInputBlur.bind(this);
+    super(props);
+    this.handleTextInputChange = this.handleTextInputChange.bind(this);
+    this.handleTextInputFocus = this.handleTextInputFocus.bind(this);
+    this.handleTextInputBlur = this.handleTextInputBlur.bind(this);
+
   }
 
-  handleInputChange(e) {
-    const {name,value, parentElement} = e.target;
-    console.log(name, ' => ', value, ' | parent-element => ', parentElement);
+  handleTextInputChange(e) {
+    const {name,value} = e.target;
+    console.log(name, ' => ', value);
   }
 
-  handleInputFocus() {
+  handleTextInputFocus(){
     console.log('focus');
   }
 
-  handleInputBlur() {
+  handleTextInputBlur() {
     console.log('blur');
   }
 
+
   render() {
-    console.log(this);
-
     const {label,name} = this.props;
+    let placeholder = `Enter ${name}`;
     return (
-
-        <div className='input-field'>
-          <label htmlFor={name} className='input-field-label'>
-            {label}
-          </label>
-          <input
-            name={name}
-            type='text'
-            className='form-control input-field-text'
-            id= {name}
-            onChange={this.handleInputChange}
-            onFocus={this.handleInputFocus}
-            onBlur={this.handleInputBlur}
-          />
-
-        </div>
-
+      <div className="form-group">
+        <label htmlFor={name}>{label}
+        </label>
+        <input
+          onChange={this.handleTextInputChange}
+          onFocus={this.handleTextInputFocus}
+          onBlur={this.handleTextInputBlur}
+          name={name}
+          type="text"
+          className="form-control"
+          id={name} placeholder={placeholder} />
+      </div>
     );
   }
+
+
+
+
 }
 
 

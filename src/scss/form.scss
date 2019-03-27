@@ -1,3 +1,8 @@
+.header {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 form {
   margin-top:3rem;
   margin-bottom: 3rem;
@@ -21,6 +26,16 @@ form {
       cursor: pointer;
     }
 
+  }
+  .form-group {
+    &.form-check {
+     .form-check-label {
+        cursor: pointer;
+     }
+    }
+    .custom-select {
+      cursor: pointer;
+    }
   }
 
 }

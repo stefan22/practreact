@@ -17,6 +17,6 @@ export const navigation =
     },
 
     label4: {//pageThree
-      name: 'PageThree', linkUrl: '/page-three'
+      name: 'Contact Us', linkUrl: '/contact-us'
     }
   };

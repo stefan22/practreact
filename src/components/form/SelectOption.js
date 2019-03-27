@@ -4,34 +4,36 @@ import '../../scss/form.scss';
 class SelectOption extends Component {
   constructor(props) {
     super(props);
-    this.handleChangeSelectOption = this.handleChangeSelectOption.bind(this);
+    this.handleSelectOption = this.handleSelectOption.bind(this);
   }
 
-  handleChangeSelectOption(e) {
+  handleSelectOption(e) {
     const {name,value} = e.target;
     console.log(name, ' => ', value);
-
   }
 
 
   render() {
-    //console.log(this);
-    const {label,name} = this.props;
-    const [first,second,third] = this.props.options;
+    const {label,options,name} = this.props;
 
     return (
-      <div className="mt-3 role-option">
-        <label className="mr-sm-2" htmlFor={name}>{label}</label>
-        <select
-          onChange={this.handleChangeSelectOption}
-          name={name}
-          className='custom-select mr-sm-2'
-          id={name}>
-          <option defaultValue>Choose...</option>
-          <option value={first}>{first}</option>
-          <option value={second}>{second}</option>
-          <option value={third}>{third}</option>
-        </select>
+      <div className="form-group">
+        <label htmlFor={name}>{label}
+        </label>
+          {
+            <select
+              onChange={this.handleSelectOption}
+              className="custom-select"
+              name={name}
+              id={name}>
+                <option defaultValue>Choose...</option>
+                {
+                  options.map((option,idx) =>
+                   <option key={idx} value={option.value}>{option.name}</option>
+                  )
+                }
+              </select>
+          }
       </div>
     );
   }
@@ -39,5 +41,6 @@ class SelectOption extends Component {
 
 
 }
+
 
 export default SelectOption;

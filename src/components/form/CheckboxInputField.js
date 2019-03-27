@@ -14,17 +14,24 @@ class CheckboxInputField extends Component {
 
 
   render() {
-    const {name,label} = this.props;
+    const {smallPrints,name,label} = this.props;
+
     return (
-      <div className='checkbox-input-field'>
+      <div className="form-group form-check">
         <input
-            onChange={this.handleCheckboxInputChange}
-            type='checkbox'
-            name={name}
-            id={name}
-            className='form-control checkbox-input-field'
-            />
-          <label htmlFor={name}>{label}</label>
+          onChange={this.handleCheckboxInputChange}
+          type="checkbox"
+          className="form-check-input"
+          name={name}
+          id={name} />
+        <label
+          className="form-check-label"
+          htmlFor={name}>
+          {label}
+        </label>
+        <small id="emailHelp" className="form-text text-muted">
+          {smallPrints}
+        </small>
       </div>
     );
   }
@@ -32,6 +39,5 @@ class CheckboxInputField extends Component {
 
 
 }
-
 
 export default CheckboxInputField;
