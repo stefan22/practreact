@@ -1,41 +1,48 @@
+.btn-outline-dark:focus, .btn-outline-dark:active {
+  box-shadow: none;
+}
+
 .header {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+	margin-top: 3rem;
 }
 
 form {
-  margin-top:3rem;
-  margin-bottom: 3rem;
-  padding:1rem;
-  input {
-    &:focus, &:focus {
-      outline: none;
-    }
-
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+  padding: 1rem;
+  &.show-form {
+    visibility: visible;
   }
-  .form-control.checkbox-input-field {
-    &:focus {
-      color: #495057;
-      background-color: #fff;
-      outline: 0;
-      box-shadow: none;
-    }
+  &.hide-form {
+    visibility: hidden;
   }
-  .role-option {
-    select {
-      cursor: pointer;
-    }
-
-  }
-  .form-group {
-    &.form-check {
-     .form-check-label {
-        cursor: pointer;
-     }
-    }
-    .custom-select {
-      cursor: pointer;
-    }
-  }
-
+	input {
+		&:focus,
+		&:focus {
+			outline: none;
+		}
+	}
+	.form-control.checkbox-input-field {
+		&:focus {
+			color: #495057;
+			background-color: #fff;
+			outline: 0;
+			box-shadow: none;
+		}
+	}
+	.role-option {
+		select {
+			cursor: pointer;
+		}
+	}
+	.form-group {
+		&.form-check {
+			.form-check-label {
+				cursor: pointer;
+			}
+		}
+		.custom-select {
+			cursor: pointer;
+		}
+	}
 }
