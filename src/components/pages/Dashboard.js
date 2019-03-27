@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import List from '../List';
 import ListDetails from '../ListDetails';
-//import FormList from '../FormList';
 import '../../scss/dashboard.scss';
 import '../../scss/form.scss';
-//import TextInputField from '../form/TextInputField';
-//import CheckboxInputField from '../form/CheckboxInputField';
-//import SelectOption from '../form/SelectOption';
+
 
 const Api = 'https://jsonplaceholder.typicode.com/users';
 
