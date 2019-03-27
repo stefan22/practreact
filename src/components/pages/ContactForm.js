@@ -84,8 +84,8 @@ class ContactForm extends Component {
           <div className='col-12 main-content'>
             <div className='form-wrapper'>
 
-            { (isFormVisible) &&
-
+            {/* keeps values in form */}
+            <div style={{visibility: isFormVisible ? 'visible': 'hidden'}}>
 
               <form onSubmit={this.handleFormSubmission}>
 
@@ -134,7 +134,7 @@ class ContactForm extends Component {
 
               </form>
 
-            }
+            </div>
 
 
             </div>
