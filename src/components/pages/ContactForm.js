@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../../scss/form.scss';
-import {Link} from 'react-router-dom';
 import TextInputField from '../form/TextInputField';
 import SelectOption from '../form/SelectOption';
 import CheckboxInputField from '../form/CheckboxInputField';

@@ -15,7 +15,6 @@ class Dashboard extends Component {
       users: [],
     }
     this.getMeUsers = this.getMeUsers.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -39,20 +38,9 @@ class Dashboard extends Component {
       })
   }
 
-  handleChange(e) {
-    const {type,name,value} = e.target;
-    if(type === 'checkbox') {
-      console.log(name, ' => ', value);
-    } else {
-      console.log(name, ' => ', value);
-    }
-
-  }
-
   render() {
     console.log(this);
     const {users} = this.state;
-    //const options = ['Full-time','Part-time','Remote'];
 
 
     return (
