@@ -2,24 +2,14 @@ import React, {Component} from 'react';
 import '../../scss/form.scss';
 
 class CheckboxInputField extends Component {
-  constructor(props) {
-    super(props);
-    this.handleCheckboxInputChange = this.handleCheckboxInputChange.bind(this);
-  }
-
-  handleCheckboxInputChange(e) {
-    const {name,checked} = e.target;
-    console.log(name, ' => ', checked);
-  }
-
 
   render() {
-    const {smallPrints,name,label} = this.props;
+    const {smallPrints,name,label,handleChange} = this.props;
 
     return (
       <div className="form-group form-check">
         <input
-          onChange={this.handleCheckboxInputChange}
+          onChange={handleChange}
           type="checkbox"
           className="form-check-input"
           name={name}

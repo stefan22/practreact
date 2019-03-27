@@ -6,6 +6,22 @@ import CheckboxInputField from '../form/CheckboxInputField';
 import FormButton from '../form/FormButton';
 
 class ContactForm extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const {type,name,value,checked} = e.target;
+    if(type === 'checkbox') {
+      console.log(name, ' => ',checked);
+    } else {
+      console.log(name, ' => ',value);
+    }
+  }
+
+
+
   render() {
     let options=[
       {
@@ -41,39 +57,45 @@ class ContactForm extends Component {
                 <TextInputField
                   label={'First Name'}
                   name={'first-name'}
+                  handleChange={this.handleChange}
                 />
 
                 <TextInputField
                   label={'Last Name'}
                   name={'last-name'}
+                  handleChange={this.handleChange}
                 />
 
                 <TextInputField
                   label={'Job Title'}
                   name={'job-title'}
+                  handleChange={this.handleChange}
                 />
 
                 <TextInputField
                   label={'Company'}
                   name={'company-name'}
+                  handleChange={this.handleChange}
                 />
 
                 <TextInputField
                   label={'Salary'}
                   name={'salary'}
+                  handleChange={this.handleChange}
                 />
 
                 <SelectOption
                   label={'Role Preference'}
                   options={options}
                   name={'preference'}
+                  handleChange={this.handleChange}
                 />
 
                 <CheckboxInputField
                   name={'terms'}
                   label={'Accept terms'}
                   smallPrints={' We\'ll never share your information with anyone.'}
-
+                  handleChange={this.handleChange}
                 />
 
                 <FormButton

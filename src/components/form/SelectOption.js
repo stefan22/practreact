@@ -2,19 +2,9 @@ import React, {Component} from 'react';
 import '../../scss/form.scss';
 
 class SelectOption extends Component {
-  constructor(props) {
-    super(props);
-    this.handleSelectOption = this.handleSelectOption.bind(this);
-  }
-
-  handleSelectOption(e) {
-    const {name,value} = e.target;
-    console.log(name, ' => ', value);
-  }
-
 
   render() {
-    const {label,options,name} = this.props;
+    const {label,options,name,handleChange} = this.props;
 
     return (
       <div className="form-group">
@@ -22,7 +12,7 @@ class SelectOption extends Component {
         </label>
           {
             <select
-              onChange={this.handleSelectOption}
+              onChange={handleChange}
               className="custom-select"
               name={name}
               id={name}>
