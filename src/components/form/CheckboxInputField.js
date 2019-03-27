@@ -13,6 +13,7 @@ class CheckboxInputField extends Component {
           type="checkbox"
           className="form-check-input"
           name={name}
+          required={true}
           id={name} />
         <label
           className="form-check-label"

@@ -4,7 +4,7 @@ import '../../scss/form.scss';
 class TextInputField extends Component {
 
   render() {
-    const {label,name,handleChange} = this.props;
+    const {label,name,handleChange,required} = this.props;
     let placeholder = `Enter ${name}`;
     return (
       <div className="form-group">
@@ -15,6 +15,7 @@ class TextInputField extends Component {
           name={name}
           type="text"
           className="form-control"
+          required={required}
           id={name} placeholder={placeholder} />
       </div>
     );

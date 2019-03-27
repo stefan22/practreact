@@ -46,3 +46,23 @@ form {
 		}
 	}
 }
+
+.form-wrapper {
+  margin-bottom: 3rem;
+}
+.form-info {
+  padding: 10px;
+  margin-bottom: 3rem;
+  table {
+    margin:3px;
+    th {
+      padding:5px;
+      text-align: center;
+      font-weight: 300;
+    }
+    td {
+      padding:7px;
+      text-align: center;
+    }
+  }
+}
