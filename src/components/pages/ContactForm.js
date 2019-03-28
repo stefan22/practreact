@@ -21,6 +21,7 @@ class ContactForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
     this.toggleFormVisibility = this.toggleFormVisibility.bind(this);
+    this.handleOnBlur = this.handleOnBlur.bind(this);
   }
 
   handleChange(e) {
@@ -50,11 +51,29 @@ class ContactForm extends Component {
     }));
   }
 
+  handleOnBlur(e) {
+   const {name} = e.target;
+   if(name === 'firstname') {
+     console.log('blur', ' => ',name);
+     this.setState({
+       firstnameError: this.state.firstname.length <= 2 ? true: false,
+     });
+   }
+   else if(name === 'lastname') {
+     this.setState({
+      lastnameError: this.state.lastname.length <= 2 ? true: false,
+     });
+   }
+
+  }
+
 
 
   render() {
     const {
-      isFormVisible,firstname,lastname,jobtitle,company,salary,preference,terms} = this.state;
+      isFormVisible,firstname,lastname,
+      jobtitle,company,salary,preference,
+      terms,firstnameError,lastnameError} = this.state;
     const enableButton = IsFormDataValid(this.state);
 
     return (
@@ -85,14 +104,32 @@ class ContactForm extends Component {
                     label={'First Name'}
                     name={'firstname'}
                     required={true}
+                    handleOnBlur={this.handleOnBlur}
                     handleChange={this.handleChange}
                   />
+
+                  {
+                    !!firstnameError &&
+                      <p className='text-monospace form-error'>
+                      Firstname must be  at least 3 characters long</p>
+                  }
+
+
                   <TextInputField
                     label={'Last Name'}
                     name={'lastname'}
                     required={true}
                     handleChange={this.handleChange}
+                    handleOnBlur={this.handleOnBlur}
                   />
+
+                  {
+                    !!lastnameError &&
+                      <p className='text-monospace form-error'>
+                      Lastname must be  at least 3 characters long</p>
+                  }
+
+
                   <TextInputField
                     label={'Job Title'}
                     name={'jobtitle'}

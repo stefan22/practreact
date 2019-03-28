@@ -4,7 +4,7 @@ import '../../scss/form.scss';
 class TextInputField extends Component {
 
   render() {
-    const {label,name,handleChange,required} = this.props;
+    const {label,name,handleChange,required, handleOnBlur} = this.props;
     let placeholder = `Enter ${name}`;
     return (
       <div className="form-group">
@@ -12,6 +12,7 @@ class TextInputField extends Component {
         </label>
         <input
           onChange={handleChange}
+          onBlur={handleOnBlur}
           name={name}
           type="text"
           className="form-control"

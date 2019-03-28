@@ -49,6 +49,11 @@ form {
 
 .form-wrapper {
   margin-bottom: 3rem;
+  .form-error {
+    font-size: 12px;
+    padding: 0 5px;
+    color: red;
+  }
 }
 .form-info {
   padding: 10px;

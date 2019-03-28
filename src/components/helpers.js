@@ -57,6 +57,8 @@ export let options = [
 
 export const IsFormDataValid = (props) => {
   if (
+    props.firstname.length >= 3 &&
+    props.lastname.length >= 3 &&
     props.jobtitle.length >= 7 && //jobtitle at least 7 length
     props.company.length >= 3 &&  //company name at least 3 length
     props.salary > 0 &&           //salary anything greater than zero
