@@ -4,7 +4,7 @@ import '../../scss/form.scss';
 class SelectOption extends Component {
 
   render() {
-    const {label,options,name,handleChange} = this.props;
+    const {label,options,name,handleChange,handleOnBlur} = this.props;
 
     return (
       <div className="form-group">
@@ -12,6 +12,7 @@ class SelectOption extends Component {
         </label>
           {
             <select
+              onBlur={handleOnBlur}
               onChange={handleChange}
               className="custom-select"
               name={name}

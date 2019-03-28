@@ -7,7 +7,6 @@ export const DataBottomTable = (props) => {
     <div className='form-info'>
       <table className='table table-sm table-dark'>
         <thead>
-          <tr><th scope='row'>State form data</th></tr>
           <tr>
             <th scope='col'>#</th>
             <th scope='col'>First</th>
@@ -21,7 +20,7 @@ export const DataBottomTable = (props) => {
         </thead>
         <tbody>
           <tr>
-            <th scope='row'>1</th>
+            <td>1</td>
             <td>{props.firstname ? props.firstname : 'n/a'}</td>
             <td>{props.lastname ? props.lastname : 'n/a'}</td>
             <td>{props.jobtitle ? props.jobtitle : 'n/a'}</td>
@@ -59,10 +58,10 @@ export const IsFormDataValid = (props) => {
   if (
     props.firstname.length >= 3 &&
     props.lastname.length >= 3 &&
-    props.jobtitle.length >= 7 && //jobtitle at least 7 length
+    props.jobtitle.length >= 5 && //jobtitle at least 5 length
     props.company.length >= 3 &&  //company name at least 3 length
     props.salary > 0 &&           //salary anything greater than zero
-    props.preference !== '' &&    //role preference pick one
+    props.preference !== 'Choose...' &&    //role preference pick one
     props.terms !== false         //must accept terms
 
   ) {

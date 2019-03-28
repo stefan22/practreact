@@ -31,12 +31,46 @@ class ContactForm extends Component {
       this.setState({
         [name]:checked
       });
-    } else {
-      console.log(name, ' => ',value);
+    }
+    if(name === 'firstname') {
       this.setState({
-        [name]: value
+        firstname: value,
+        firstnameError: (value.length >= 3) ? false: true,
       });
     }
+    else if(name === 'lastname') {
+      this.setState({
+        lastname:value,
+        lastnameError: (value.length >= 3) ? false: true,
+      });
+    }
+    else if(name === 'jobtitle') {
+      this.setState({
+        jobtitle: value,
+        jobtitleError: (value.length >= 5) ? false: true,
+      });
+    }
+    else if(name === 'company') {
+      this.setState({
+        company: value,
+        companyError: (value.length >= 3) ? false: true,
+      });
+    }
+
+    else if(name === 'salary') {
+      this.setState({
+        salary: value,
+        salaryError: (value > 0) ? false: true,
+      });
+    }
+
+    else if(name === 'preference') {
+      this.setState({
+        preference: value,
+        preferenceError: value.includes('Choose...') ? true: false,
+      });
+    }
+
   }
 
   handleFormSubmission(e) {
@@ -52,18 +86,43 @@ class ContactForm extends Component {
   }
 
   handleOnBlur(e) {
-   const {name} = e.target;
+   const {name,value} = e.target;
    if(name === 'firstname') {
-     console.log('blur', ' => ',name);
      this.setState({
-       firstnameError: this.state.firstname.length <= 2 ? true: false,
+       firstnameError: value.length <= 2 ? true: false,
      });
    }
    else if(name === 'lastname') {
      this.setState({
-      lastnameError: this.state.lastname.length <= 2 ? true: false,
+      lastnameError: value.length <= 2 ? true: false,
      });
    }
+
+   else if(name === 'jobtitle') {
+      this.setState({
+      jobtitleError: value.length <= 4 ? true: false,
+      });
+    }
+
+    else if(name === 'company') {
+      this.setState({
+       companyError: value.length <= 2 ? true: false,
+      });
+    }
+
+    else if(name === 'salary') {
+      this.setState({
+       salaryError: value <= 0 ? true: false,
+      });
+    }
+
+    else if(name === 'preference') {
+      console.log('blur', ' => ',name);
+      this.setState({
+       preferenceError:  value.includes('Choose...') ? true: false,
+
+      });
+    }
 
   }
 
@@ -73,7 +132,8 @@ class ContactForm extends Component {
     const {
       isFormVisible,firstname,lastname,
       jobtitle,company,salary,preference,
-      terms,firstnameError,lastnameError} = this.state;
+      terms,firstnameError,lastnameError,
+      jobtitleError,companyError,salaryError,preferenceError} = this.state;
     const enableButton = IsFormDataValid(this.state);
 
     return (
@@ -134,23 +194,59 @@ class ContactForm extends Component {
                     label={'Job Title'}
                     name={'jobtitle'}
                     handleChange={this.handleChange}
+                    handleOnBlur={this.handleOnBlur}
                   />
+
+                  {
+                    !!jobtitleError &&
+                      <p className='text-monospace form-error'>
+                      Job title must be  at least 5 characters long</p>
+                  }
+
+
                   <TextInputField
                     label={'Company'}
                     name={'company'}
                     handleChange={this.handleChange}
+                    handleOnBlur={this.handleOnBlur}
                   />
+
+                  {
+                    !!companyError &&
+                      <p className='text-monospace form-error'>
+                      Company must be  at least 3 characters long</p>
+                  }
+
+
                   <TextInputField
                     label={'Salary'}
                     name={'salary'}
                     handleChange={this.handleChange}
+                    handleOnBlur={this.handleOnBlur}
                   />
+
+                  {
+                    !!salaryError &&
+                      <p className='text-monospace form-error'>
+                      Salary must be greater than zero</p>
+                  }
+
                   <SelectOption
                     label={'Role Preference'}
                     options={options}
                     name={'preference'}
                     handleChange={this.handleChange}
+                    handleOnBlur={this.handleOnBlur}
                   />
+
+                  {
+                    !!preferenceError &&
+                      <p className='text-monospace form-error'>
+                      You must choose a role from dropdown menu</p>
+                  }
+
+
+
                   <CheckboxInputField
                     name={'terms'}
                     label={'Accept terms'}
