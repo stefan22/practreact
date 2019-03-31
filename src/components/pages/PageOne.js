@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../../scss/tfl.scss';
 import Showtime from '../Showtime';
 //tfl real-time disruptions updates
-const TFL='https://api-tigris.tfl.gov.uk/Line/Mode/tube/Disruption';
+const TFL='https://api.tfl.gov.uk/Line/central%2Cdistrict%2Ccircle%2Cvictoria%2Cdlr/Disruption';
 
 class PageOne extends Component {
   constructor(props) {
@@ -12,6 +12,10 @@ class PageOne extends Component {
       error: '',
       isShowTime: true,
     };
+  }
+
+  componentDidMount() {
+    this.getTFLData();
   }
 
   getTFLData = () => {
