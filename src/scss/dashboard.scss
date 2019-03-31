@@ -16,6 +16,12 @@
   margin-top:3rem;
   margin-bottom:3rem;
   box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+  thead {
+    th {
+      color:aliceblue;
+      background:#312225;
+    }
+  }
   tbody {
     tr {
       td {
@@ -23,10 +29,15 @@
         padding:12px;
         &:hover {
           cursor: pointer;
+          color:#171515;
+
         }
       }
       &:hover {
-        background-color: #ececec;
+        background-color: #ff7b93;
+        transition:all .25 ease-in;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+        outline: 1px ridge #bf3f58;
       }
     }
   }
