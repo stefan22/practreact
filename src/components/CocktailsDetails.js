@@ -20,7 +20,6 @@ class CocktailsDetails extends Component {
   }
 
   render() {
-    console.log(this);
     const {drinks} = this.state;
     return (
 

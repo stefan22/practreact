@@ -4,7 +4,6 @@ import '../scss/list.scss';
 
 class List extends Component {
   render() {
-    console.log(this);
     const {items, tableHeadings, itemElement: Item} = this.props;
     return (
       <div className='table-wrapper'>

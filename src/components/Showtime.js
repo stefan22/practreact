@@ -23,7 +23,6 @@ class ShowTime extends Component {
 
 
   render() {
-
     const {time} = this.state;
     let showTime = time.toLocaleTimeString();
     return (
