@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import '../scss/list.scss';
 
 class List extends Component {
   render() {
-
-    const {users, itemElement: Item} = this.props;
+    console.log(this);
+    const {items, tableHeadings, itemElement: Item} = this.props;
     return (
       <div className='table-wrapper'>
        <table
@@ -15,18 +16,18 @@ class List extends Component {
             border='1'>
           <thead>
             <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Username</th>
-              <th>Phone</th>
-              <th>Website</th>
+              <th>{tableHeadings.heading1}</th>
+              <th>{tableHeadings.heading2}</th>
+              <th>{tableHeadings.heading3}</th>
+              <th>{tableHeadings.heading4}</th>
+              <th>{tableHeadings.heading5}</th>
             </tr>
           </thead>
 
             {
-              users.map((itm,idx) => {
+              items.map((itm,idx) => {
                 return (
-                  <Item key={itm.id} seckey={idx}
+                  <Item key={idx} seckey={idx}
                         {...itm}
                   />
                 );
@@ -38,6 +39,12 @@ class List extends Component {
     );
   }
 
+}
+
+List.propTypes = {
+  items: PropTypes.array.isRequired,
+  itemElement: PropTypes.func.isRequired,
+  tableHeadings: PropTypes.object.isRequired,
 }
 
 
