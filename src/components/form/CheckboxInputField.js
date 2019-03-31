@@ -1,10 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import '../../scss/form.scss';
 
-class CheckboxInputField extends Component {
-
-  render() {
-    const {smallPrints,name,label,handleChange} = this.props;
+const CheckboxInputField = ({smallPrints,name,label,handleChange}) => {
 
     return (
       <div className="form-group form-check">
@@ -25,10 +23,15 @@ class CheckboxInputField extends Component {
         </small>
       </div>
     );
-  }
-
-
 
 }
+
+CheckboxInputField.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  smallPrints: PropTypes.string,
+};
+
 
 export default CheckboxInputField;

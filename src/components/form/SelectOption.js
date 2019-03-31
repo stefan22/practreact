@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import '../../scss/form.scss';
 
-class SelectOption extends Component {
-
-  render() {
-    const {label,options,name,handleChange,handleOnBlur} = this.props;
+const SelectOption = ({
+  label,options,name,handleChange,handleOnBlur
+}) => {
 
     return (
       <div className="form-group">
@@ -23,15 +23,19 @@ class SelectOption extends Component {
                    <option key={idx} value={option.value}>{option.name}</option>
                   )
                 }
-              </select>
+            </select>
           }
       </div>
     );
-  }
-
-
 
 }
+
+SelectOption.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleOnBlur: PropTypes.func,
+};
 
 
 export default SelectOption;

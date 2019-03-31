@@ -4,6 +4,7 @@ import TextInputField from '../form/TextInputField';
 import SelectOption from '../form/SelectOption';
 import CheckboxInputField from '../form/CheckboxInputField';
 import {DataBottomTable, options, IsFormDataValid} from '../helpers';
+import {formErrors} from '../../data/formErrors';
 
 class ContactForm extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class ContactForm extends Component {
       salary: 0,
       preference: '',
       terms: false,
+      required: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
@@ -35,39 +37,39 @@ class ContactForm extends Component {
     if(name === 'firstname') {
       this.setState({
         firstname: value,
-        firstnameError: (value.length >= 3) ? false: true,
+        firstnameError: (value.length >= 3) ? false: formErrors.firstnameError,
       });
     }
     else if(name === 'lastname') {
       this.setState({
         lastname:value,
-        lastnameError: (value.length >= 3) ? false: true,
+        lastnameError: (value.length >= 3) ? false: formErrors.lastnameError,
       });
     }
     else if(name === 'jobtitle') {
       this.setState({
         jobtitle: value,
-        jobtitleError: (value.length >= 5) ? false: true,
+        jobtitleError: (value.length >= 5) ? false: formErrors.jobtitleError,
       });
     }
     else if(name === 'company') {
       this.setState({
         company: value,
-        companyError: (value.length >= 3) ? false: true,
+        companyError: (value.length >= 3) ? false: formErrors.companyError,
       });
     }
 
     else if(name === 'salary') {
       this.setState({
         salary: value,
-        salaryError: (value > 0) ? false: true,
+        salaryError: (value > 0) ? false: formErrors.salaryError,
       });
     }
 
     else if(name === 'preference') {
       this.setState({
         preference: value,
-        preferenceError: value.includes('Choose...') ? true: false,
+        preferenceError: value.includes('Choose...') ? formErrors.preferenceError: false,
       });
     }
 
@@ -89,46 +91,45 @@ class ContactForm extends Component {
    const {name,value} = e.target;
    if(name === 'firstname') {
      this.setState({
-       firstnameError: value.length <= 2 ? true: false,
+       firstnameError: value.length <= 2 ? formErrors.firstnameError: false,
      });
    }
    else if(name === 'lastname') {
      this.setState({
-      lastnameError: value.length <= 2 ? true: false,
+      lastnameError: value.length <= 2 ? formErrors.lastnameError: false,
      });
    }
 
    else if(name === 'jobtitle') {
       this.setState({
-      jobtitleError: value.length <= 4 ? true: false,
+      jobtitleError: value.length <= 4 ? formErrors.jobtitleError: false,
       });
     }
 
     else if(name === 'company') {
       this.setState({
-       companyError: value.length <= 2 ? true: false,
+       companyError: value.length <= 2 ? formErrors.companyError: false,
       });
     }
 
     else if(name === 'salary') {
       this.setState({
-       salaryError: value <= 0 ? true: false,
+       salaryError: value <= 0 ? formErrors.salaryError: false,
       });
     }
 
     else if(name === 'preference') {
       console.log('blur', ' => ',name);
       this.setState({
-       preferenceError:  value.includes('Choose...') ? true: false,
+       preferenceError:  value.includes('Choose...') ? formErrors.preferenceError: false,
 
       });
     }
 
   }
 
-
-
   render() {
+
     const {
       isFormVisible,firstname,lastname,
       jobtitle,company,salary,preference,
@@ -171,9 +172,8 @@ class ContactForm extends Component {
                   {
                     !!firstnameError &&
                       <p className='text-monospace form-error'>
-                      Firstname must be  at least 3 characters long</p>
+                      {firstnameError}</p>
                   }
-
 
                   <TextInputField
                     label={'Last Name'}
@@ -186,13 +186,13 @@ class ContactForm extends Component {
                   {
                     !!lastnameError &&
                       <p className='text-monospace form-error'>
-                      Lastname must be  at least 3 characters long</p>
+                      {lastnameError}</p>
                   }
-
 
                   <TextInputField
                     label={'Job Title'}
                     name={'jobtitle'}
+                    required={true}
                     handleChange={this.handleChange}
                     handleOnBlur={this.handleOnBlur}
                   />
@@ -200,9 +200,8 @@ class ContactForm extends Component {
                   {
                     !!jobtitleError &&
                       <p className='text-monospace form-error'>
-                      Job title must be  at least 5 characters long</p>
+                      {jobtitleError}</p>
                   }
-
 
                   <TextInputField
                     label={'Company'}
@@ -214,9 +213,8 @@ class ContactForm extends Component {
                   {
                     !!companyError &&
                       <p className='text-monospace form-error'>
-                      Company must be  at least 3 characters long</p>
+                      {companyError}</p>
                   }
-
 
                   <TextInputField
                     label={'Salary'}
@@ -228,7 +226,7 @@ class ContactForm extends Component {
                   {
                     !!salaryError &&
                       <p className='text-monospace form-error'>
-                      Salary must be greater than zero</p>
+                      {salaryError}</p>
                   }
 
                   <SelectOption
@@ -242,10 +240,8 @@ class ContactForm extends Component {
                   {
                     !!preferenceError &&
                       <p className='text-monospace form-error'>
-                      You must choose a role from dropdown menu</p>
+                      {preferenceError}</p>
                   }
-
-
 
                   <CheckboxInputField
                     name={'terms'}
@@ -265,7 +261,6 @@ class ContactForm extends Component {
               </div>
             </div>
 
-
             <DataBottomTable
               firstname={firstname}
               lastname={lastname}
@@ -274,7 +269,6 @@ class ContactForm extends Component {
               salary={salary}
               preference={preference}
               terms={terms}
-
             />
 
           </div>

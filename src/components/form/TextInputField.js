@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import '../../scss/form.scss';
 
-class TextInputField extends Component {
+const TextInputField = ({
+  label,name,handleChange,required,handleOnBlur
+}) => {
 
-  render() {
-    const {label,name,handleChange,required, handleOnBlur} = this.props;
     let placeholder = `Enter ${name}`;
     return (
       <div className="form-group">
@@ -20,11 +21,16 @@ class TextInputField extends Component {
           id={name} placeholder={placeholder} />
       </div>
     );
-  }
 
+}
 
-
-
+TextInputField.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleOnBlur: PropTypes.func,
+  required: PropTypes.bool,
+  placeholder: PropTypes.string,
 }
 
 

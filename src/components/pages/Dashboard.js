@@ -3,22 +3,33 @@ import List from '../List';
 import ListDetails from '../ListDetails';
 import '../../scss/dashboard.scss';
 import '../../scss/form.scss';
+import WindowWidth from '../WindowWidth';
+import {handleTableHeadings} from '../handleTableHeadings';
 
 
 const Api = 'https://jsonplaceholder.typicode.com/users';
-
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       users: [],
-    }
+      loading:true,
+    };
     this.getMeUsers = this.getMeUsers.bind(this);
   }
 
   componentDidMount() {
     this.getMeUsers();
+    this.loadingTimeout = setTimeout(() => {
+      this.setState({
+        loading: false
+      });
+    },1200);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.loadingTimeout);
   }
 
   getMeUsers() {
@@ -39,9 +50,10 @@ class Dashboard extends Component {
   }
 
   render() {
-    console.log(this);
-    const {users} = this.state;
-
+    const {users,loading} = this.state;
+    if(loading) {
+      return <h1 className='mt-5 text-center'>Loading...</h1>
+    }
 
     return (
         <div className='container'>
@@ -49,15 +61,19 @@ class Dashboard extends Component {
             <div className='col-12'>
               <div className='heading'>
                 <h1 className='text-center'>Table of Users</h1>
-                <p>Reusable list, passing itemElement component as a property</p>
+                <p>Reusable list, passing ListDetails component as a property</p>
+                <div>
+                  <WindowWidth />
+                </div>
               </div>
 
               <List
-                users={users}
+                tableHeadings={handleTableHeadings(
+                  'Id','Name','Username','Phone','Website'
+                )}
+                items={users}
                 itemElement={ListDetails}
-
               />
-
 
             </div>
           </div>
