@@ -18,5 +18,9 @@ export const navigation =
 
     label4: {//pageThree
       name: 'Contact Us', linkUrl: '/contact-us'
+    },
+
+    label5: {//pageFour
+      name: 'Page Four', linkUrl: '/page-four'
     }
   };

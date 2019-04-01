@@ -7,6 +7,7 @@ import PageTwo from './components/pages/PageTwo';
 import ContactForm from './components/pages/ContactForm';
 import Dashboard from './components/pages/Dashboard';
 import Company from './components/pages/Company';
+import PageFour from './components/pages/PageFour';
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
               <Route path="/about-us" component={Company} />
               <Route path="/page-one" component={PageOne} />
               <Route path="/page-two" component={PageTwo} />
+              <Route path="/page-four" component={PageFour} />
               <Route path="/contact-us" component={ContactForm} />
             </Switch>
           </div>
