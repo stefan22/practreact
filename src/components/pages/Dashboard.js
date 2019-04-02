@@ -5,6 +5,7 @@ import '../../scss/dashboard.scss';
 import '../../scss/form.scss';
 import WindowWidth from '../WindowWidth';
 import {handleTableHeadings} from '../handleTableHeadings';
+import Typography from '@material-ui/core/Typography';
 
 
 const Api = 'https://jsonplaceholder.typicode.com/users';
@@ -60,11 +61,15 @@ class Dashboard extends Component {
           <div className='row'>
             <div className='col-12'>
               <div className='heading'>
-                <h1 className='text-center'>Table of Users</h1>
-                <p>Reusable list, passing ListDetails component as a property</p>
-                <div>
+                <Typography variant="h2" className='text-center'>
+                Table of Users
+                </Typography>
+                <Typography variant="p" gutterBottom className='text-center subtitle'>
+                  Reusable list, passing ListDetails component as a property
+                </Typography>
+                <Typography variant="p" gutterBottom className='text-center'>
                   <WindowWidth />
-                </div>
+                </Typography>
               </div>
 
               <List

@@ -32,7 +32,7 @@ class WindowWidth extends Component {
 
     return (
       <div>
-        <p className='text-center'>{`🖥️ width: ${windowWidth} px`}</p>
+        <p className='text-center'>🖥️&nbsp;{`width: ${windowWidth} px`}</p>
       </div>
     );
   }

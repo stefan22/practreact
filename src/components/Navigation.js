@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -91,38 +91,38 @@ function SearchAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            <Link to={label1.linkUrl} className='nav-link'
+            <NavLink to={label1.linkUrl} className='nav-link'
                activeClassName='is-active' exact={true}
                >
                {label1.name}
-            </Link>
+            </NavLink>
           </Typography>
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            <Link to={label2.linkUrl} className='nav-link'
+            <NavLink to={label2.linkUrl} className='nav-link'
                activeClassName='is-active' exact={true}
                >
                {label2.name}
-            </Link>
+            </NavLink>
           </Typography>
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            <Link to={label3.linkUrl} className='nav-link'
+            <NavLink to={label3.linkUrl} className='nav-link'
                activeClassName='is-active' exact={true}
                >
                {label3.name}
-            </Link>
+            </NavLink>
           </Typography>
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            <Link to={label4.linkUrl} className='nav-link' activeClassName='is-active' exact={true}
+            <NavLink to={label4.linkUrl} className='nav-link' activeClassName='is-active' exact={true}
                >
                {label4.name}
-            </Link>
+            </NavLink>
           </Typography>
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            <Link to={label5.linkUrl} className='nav-link'
+            <NavLink to={label5.linkUrl} className='nav-link'
                activeClassName='is-active' exact={true}
                >
                {label5.name}
-            </Link>
+            </NavLink>
           </Typography>
           <div className={classes.grow} />
           <div className={classes.search}>
