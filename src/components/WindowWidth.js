@@ -31,8 +31,11 @@ class WindowWidth extends Component {
     const {windowWidth} = this.state;
 
     return (
-      <div>
-        <p className='text-center'>🖥️&nbsp;{`width: ${windowWidth} px`}</p>
+      <div className='text-center'>
+        <span
+          className='emoji-monitor'
+          role='img' aria-label='monitor'>🖥️</span>
+          &nbsp;{`width: ${windowWidth} px`}
       </div>
     );
   }
