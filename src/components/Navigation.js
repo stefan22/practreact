@@ -16,8 +16,6 @@ import {navigation} from '../data/navdata';
 
 const {label0,label1,label2,label3,label4,label5} = navigation;
 
-
-
 const styles = theme => ({
   root: {
     width: '100%',
@@ -124,6 +122,7 @@ function SearchAppBar(props) {
                {label5.name}
             </NavLink>
           </Typography>
+
           <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -137,6 +136,15 @@ function SearchAppBar(props) {
               }}
             />
           </div>
+
+          <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+            <NavLink to={label0.linkUrl} className='nav-link'
+               activeClassName='is-active' exact={true}
+               >
+               {label0.name}
+            </NavLink>
+          </Typography>
+
         </Toolbar>
       </AppBar>
     </div>
