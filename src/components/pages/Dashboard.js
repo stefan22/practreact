@@ -64,10 +64,10 @@ class Dashboard extends Component {
                 <Typography variant="h2" className='text-center'>
                 Table of Users
                 </Typography>
-                <Typography variant="p" gutterBottom className='text-center subtitle'>
+                <Typography variant="h6" gutterBottom className='text-center subtitle'>
                   Reusable list, passing ListDetails component as a property
                 </Typography>
-                <Typography variant="p" gutterBottom className='text-center'>
+                <Typography variant="h6" gutterBottom className='text-center'>
                   <WindowWidth />
                 </Typography>
               </div>
