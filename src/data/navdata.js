@@ -21,6 +21,6 @@ export const navigation =
     },
 
     label5: {//pageFour
-      name: 'Page Four', linkUrl: '/page-four'
+      name: 'Jobs', linkUrl: '/jobs-list'
     }
   };
