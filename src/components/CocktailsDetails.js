@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,Fragment} from 'react';
 import '../scss/list.scss';
 
 class CocktailsDetails extends Component {
@@ -22,7 +22,7 @@ class CocktailsDetails extends Component {
   render() {
     const {drinks} = this.state;
     return (
-
+        <Fragment>
           <tbody>
             {
               (drinks.length) ?
@@ -39,6 +39,7 @@ class CocktailsDetails extends Component {
                ):null
             }
           </tbody>
+      </Fragment>
     );
   }
 
