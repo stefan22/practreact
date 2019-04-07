@@ -3,7 +3,7 @@ import List from '../List';
 import ListDetails from '../ListDetails';
 import '../../scss/dashboard.scss';
 import '../../scss/form.scss';
-import WindowWidth from '../WindowWidth';
+//import WindowWidth from '../WindowWidth';
 import {handleTableHeadings} from '../handleTableHeadings';
 import Typography from '@material-ui/core/Typography';
 
@@ -64,11 +64,19 @@ class Dashboard extends Component {
                 <Typography variant="h2" className='text-center'>
                 Table of Users
                 </Typography>
-                <Typography variant="h6" gutterBottom className='text-center subtitle'>
+                <Typography variant="h5" gutterBottom className='text-center subtitle'>
                   Reusable list, passing ListDetails component as a property
                 </Typography>
                 <Typography variant="h6" gutterBottom className='text-center'>
-                  <WindowWidth />
+                  {/* <WindowWidth /> */}
+                </Typography>
+
+                <Typography variant="h6" gutterBottom className='text-center'>
+                  •Pulls this users data table
+                  •Tfl live train disruptions
+                  •Earthquake data & Margaritas
+                  •Contact form with checks
+                  •Jobs data list
                 </Typography>
               </div>
 

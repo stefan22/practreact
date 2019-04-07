@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,Fragment} from 'react';
 import {eqAPI} from '../../APIHelpers';
 import {drinks} from '../../data/margaritasData';
 import List from '../List';
@@ -6,6 +6,7 @@ import CocktailsDetails from '../CocktailsDetails';
 import {getMeACocktail} from '../../APIHelpers';
 import {HashLink as Link} from 'react-router-hash-link';
 import {handleTableHeadings} from '../handleTableHeadings';
+import Typography from '@material-ui/core/Typography';
 
 class PageTwo extends Component {
   constructor(props) {
@@ -54,15 +55,25 @@ class PageTwo extends Component {
     }
 
     return (
-      <div>
+      <Fragment>
         <div className='fluid-container'>
           <div className='row'>
-            <div className='col-12 heading'>
-              <h1 className='mt-3 text-center'>EarthQuake Data</h1>
-              <h4 className='text-center'>
-              Last Weekend Top 20 from around the World, March, 2019</h4>
-              <h4 className='text-center'>
-                <Link to={`#cocktails`}>Or Checkout Our Favorite Margaritas</Link></h4>
+            <div className='col-12'>
+              <div className='heading'>
+                <Typography variant="h2" className='text-center'>
+                  EarthQuake Data
+                </Typography>
+                <Typography variant="h5" gutterBottom
+                  className='text-center subtitle'>
+                  Last Weekend Top 20 from around the World, March, 2019
+                </Typography>
+                <Typography variant="h6" gutterBottom
+                  className='text-center subtitle'>
+                   <Link to={`#cocktails`}>
+                   Or Checkout Our Favorite Margaritas
+                   </Link>
+                </Typography>
+              </div>
             </div>
           </div>
         </div>
@@ -110,7 +121,7 @@ class PageTwo extends Component {
 
           </div>
         </div>
-      </div>
+      </Fragment>
 
 
     );

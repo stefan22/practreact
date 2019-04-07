@@ -2,10 +2,13 @@
 import React, {Component} from 'react';
 
 class Company extends Component {
+
+
   render() {
+
     return (
       <div>
-        Company
+        <h2>Company</h2>
       </div>
     );
   }

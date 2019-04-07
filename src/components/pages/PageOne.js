@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import '../../scss/tfl.scss';
 import Showtime from '../Showtime';
+import Typography from '@material-ui/core/Typography';
+
+
 //tfl real-time disruptions updates
 const TFL='https://api.tfl.gov.uk/Line/central%2Cdistrict%2Ccircle%2Cvictoria%2Cdlr/Disruption';
 
@@ -41,19 +44,31 @@ class PageOne extends Component {
 
     return (
       <div>
-
-        <h1 className='mt-5 text-center'>TFL Live Disruptions</h1>
-        <h2 className='text-center'>
-
-          {isShowTime ? <Showtime /> : null}
-
-        </h2>
-        <h4 className='text-center'>
+        <div className='heading'>
+          <Typography variant="h2" className='text-center'>
+            TFL Live Disruptions
+          </Typography>
+          <Typography variant="h5" gutterBottom
+            className='text-center subtitle'>
+            {isShowTime ? <Showtime /> : null}
+          </Typography>
+          <Typography variant="h6" gutterBottom
+            className='text-center subtitle'>
             {
               (tfl.length) ? '# of alerts: ' + tfl.length :
-              'No Alerts at this time. TFL must be doing a good job.'
+              <Typography variant="p" style={{color:'red'}}>
+                No Alerts at this time. TFL must be doing a good job.
+              </Typography>
             }
-        </h4>
+          </Typography>
+        </div>
+
+
+
+
+
+
+
 
         {tfl.length ?
           tfl.map((data,idx) =>
