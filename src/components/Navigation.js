@@ -13,7 +13,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import '../scss/topnav.scss';
 import {navigation} from '../data/navdata';
 
-const {label0,label1,label2,label3,label4,label5} = navigation;
+const {label0,label1,label2,label3,label4,label5,label6,label7} = navigation;
 
 const styles = theme => ({
   root: {
@@ -123,6 +123,14 @@ function SearchAppBar(props) {
             </NavLink>
           </Typography>
 
+          <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+            <NavLink to={label6.linkUrl} className='nav-link'
+               activeClassName='is-active' exact={true}
+               >
+              {label6.name}
+            </NavLink>
+          </Typography>
+
           <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -142,6 +150,14 @@ function SearchAppBar(props) {
                activeClassName='is-active' exact={true}
                >
                {label0.name}
+            </NavLink>
+          </Typography>
+
+          <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+            <NavLink to={label7.linkUrl} className='nav-link'
+               activeClassName='is-active' exact={true}
+               >
+               {label7.name}
             </NavLink>
           </Typography>
 

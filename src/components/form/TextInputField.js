@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../../scss/form.scss';
 
 const TextInputField = ({
-  label,name,handleChange,required,handleOnBlur
+  label,name,type,handleChange,required,handleOnBlur
 }) => {
 
     let placeholder = `Enter ${name}`;
@@ -15,7 +15,7 @@ const TextInputField = ({
           onChange={handleChange}
           onBlur={handleOnBlur}
           name={name}
-          type="text"
+          type={type}
           className="form-control"
           required={required}
           id={name} placeholder={placeholder} />

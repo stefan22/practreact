@@ -39,8 +39,13 @@ class PageOne extends Component {
 
 
 
+
   render() {
+    console.log(this);
     const {tfl,isShowTime} = this.state;
+
+
+
 
     return (
       <div>
@@ -56,7 +61,7 @@ class PageOne extends Component {
             className='text-center subtitle'>
             {
               (tfl.length) ? '# of alerts: ' + tfl.length :
-              <Typography variant="p" style={{color:'red'}}>
+              <Typography variant="body1" style={{color:'red'}}>
                 No Alerts at this time. TFL must be doing a good job.
               </Typography>
             }

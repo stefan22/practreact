@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import '../../../scss/jobs-form.scss';
 
 class JobCreationForm extends Component {
@@ -13,7 +14,10 @@ class JobCreationForm extends Component {
       <div>
           <form className='job-form'>
             <div className='job-item'>
-              <span>Id</span> {id}
+              <span>Id</span>
+              <Link to={`/local-jobs/${id}`}>
+              {id}
+              </Link>
             </div>
             <div className='job-item'>
               <span className='job-item_heading'>Heading</span> {heading}
