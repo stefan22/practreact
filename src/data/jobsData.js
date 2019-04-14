@@ -1,6 +1,6 @@
 export const JobsData = [
   {
-    id: '10fad12f04',
+    id: '01',
     heading: 'junior-react-developer-at-startup-x',
     company: 'Startup X',
     role: 'React Developer',
@@ -13,7 +13,7 @@ export const JobsData = [
     clicks: 1207,
   },
   {
-    id: '1faddb4bb1',
+    id: '02',
     heading: 'junior-ruby-on-rails-developer-at-startup-x',
     company: 'Startup X',
     role: 'Junior Ruby on Rails Developer',
@@ -26,7 +26,7 @@ export const JobsData = [
     clicks: 3042,
   },
   {
-    id: '6df7ae01tg',
+    id: '03',
     heading: 'senior-nodejs-engineer-at-enterprise-y',
     company: 'Enterprise Y',
     role: 'Senior NodeJS Engineer',
@@ -39,7 +39,7 @@ export const JobsData = [
     clicks: 2012,
   },
   {
-    id: 'a6rbddb5ay',
+    id: '04',
     heading: 'react-developer-company-abc',
     company: 'Company ABC',
     role: 'React Developer',
@@ -52,7 +52,7 @@ export const JobsData = [
     clicks: 2421,
   },
   {
-    id: '71e01bfebh',
+    id: '05',
     heading: 'fullstack-javascript-engineer-companxy-xyz',
     company: 'Company XYZ',
     role: 'Full-stack JavaScript Engineer',
@@ -65,7 +65,7 @@ export const JobsData = [
     clicks: 2963,
   },
   {
-    id: 'df3a476a80',
+    id: '06',
     heading: 'ai-internship-at-zeta',
     company: 'Company Zeta',
     role: 'AI Intern',

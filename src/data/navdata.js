@@ -21,6 +21,15 @@ export const navigation =
     },
 
     label5: {//pageFour
-      name: 'Jobs', linkUrl: '/jobs'
-    }
+      name: 'Local Jobs', linkUrl: '/local-jobs'
+    },
+
+    label6: {//pageFour
+      name: 'API Jobs', linkUrl: '/api-jobs'
+    },
+
+    label7: {//pageFour
+      name: 'Login', linkUrl: '/login'
+    },
+
   };
